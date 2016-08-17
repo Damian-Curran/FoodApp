@@ -28,4 +28,14 @@ angular.module('food', ['ionic'])
 	  
 	 return total;
     };
+	
+	$scope.duplicate = function (name, calorie) {
+		$scope.foods.push({
+		name: name,
+		calorie: calorie
+    });
+	$scope.calorie.push({
+	  calorie: calorie
+    });
+	}
 });

@@ -26,6 +26,7 @@
 		  {{food.calorie}}
 		  <ion-delete-button class="ion-minus-circled"
 		  ng-click="[foods.splice($index, 1), calorie.splice($index,1)]"></ion-delete-button>
+		  <button type="duplicate" class="button" ng-click="duplicate(food.name, food.calorie)">Duplicate</button>
         </ion-item>
       </ion-list>
 	  <form ng-submit="createFood(food)">
