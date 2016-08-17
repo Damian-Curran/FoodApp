@@ -25,7 +25,7 @@
           {{food.name}}
 		  {{food.calorie}}
 		  <ion-delete-button class="ion-minus-circled"
-		  ng-click="foods.splice($index, 1)"></ion-delete-button>
+		  ng-click="[foods.splice($index, 1), calorie.splice($index,1)]"></ion-delete-button>
         </ion-item>
       </ion-list>
 	  <form ng-submit="createFood(food)">
@@ -41,6 +41,9 @@
           <button type="submit" class="button button-block button-positive">Create food</button>
         </div>
       </form>
+	  
+	  {{totalCalorie()}}
+	  
     </ion-content>
   </ion-side-menus>
  
