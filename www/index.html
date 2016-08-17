@@ -15,14 +15,17 @@
   <ion-side-menus>
     <!-- Center content -->
     <ion-header-bar class="bar-dark">
+	<div class="buttons"><button class = "button" ng-click="data.showDelete = !data.showDelete">Edit</div>
     <h1 class="title">Calorie Recorder</h1>
     </ion-header-bar>
     <ion-content>
       <!-- list and list items -->
-      <ion-list >
+      <ion-list show-delete="data.showDelete">
         <ion-item ng-repeat="food in foods">
           {{food.name}}
 		  {{food.calorie}}
+		  <ion-delete-button class="ion-minus-circled"
+		  ng-click="foods.splice($index, 1)"></ion-delete-button>
         </ion-item>
       </ion-list>
 	  <form ng-submit="createFood(food)">

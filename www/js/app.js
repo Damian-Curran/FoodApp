@@ -10,6 +10,9 @@ angular.module('food', ['ionic'])
       name: food.name,
 	  calorie: food.calorie
     });
+	$scope.calorie.push({
+	  calorie: food.calorie
+    });
 	
     food.name = "";
 	food.calorie = "";
