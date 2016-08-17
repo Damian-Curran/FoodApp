@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,7 +10,7 @@
 
 	<script src="js/app.js"></script>
     <script src="cordova.js"></script>
-	
+  </head>
   <body ng-app="food" ng-controller="foodCtrl">
   <ion-side-menus>
     <!-- Center content -->
@@ -18,12 +19,25 @@
     </ion-header-bar>
     <ion-content>
       <!-- list and list items -->
-      <ion-list>
+      <ion-list >
         <ion-item ng-repeat="food in foods">
           {{food.name}}
 		  {{food.calorie}}
         </ion-item>
       </ion-list>
+	  <form ng-submit="createFood(food)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="What food name?" ng-model="food.name">
+			</label>
+			<label class="item item-input">
+			<input type="number" placeholder="What food calorie?" ng-model="food.calorie">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create food</button>
+        </div>
+      </form>
     </ion-content>
   </ion-side-menus>
  
